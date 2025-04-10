@@ -17,8 +17,9 @@ frquency_GSPRT=sum(exp_result_GSPRT);
 %true_mean(:,1)=1+true_mean(:,1);
 [membership, member_value]=find_pareto_frontier(true_mean);
 optimal_system=member_value;
+
 %% Confidence Region For Pareto Front
-Plotting_confidence_box(system_info,sample_size_vec,0.05,'#FFFF00');
+Plotting_confidence_box_updated(system_info,sample_size_vec,0.05,'#FFFF00');
 hold on
 %scatter(true_mean(:,1),true_mean(:,2),20,'black','filled','MarkerFaceAlpha',.2,'MarkerEdgeAlpha',.2)
 %hold on
@@ -37,8 +38,8 @@ xlim([0.2,0.55])
 ylim([0,40])
 
 f = gcf;
-savefig('Pareto Opt\Confidence_Region_Box_Illustration.fig')
-exportgraphics(f,'Pareto Opt\Confidence_Region_Box_Illustration.png','Resolution',600)
+savefig('Pareto Opt\Confidence_Region_Box_Illustration_new.fig')
+exportgraphics(f,'Pareto Opt\Confidence_Region_Box_Illustration_new.png','Resolution',600)
 
 %% Checking PAS
 count=0;
@@ -145,7 +146,7 @@ count
 %% full plots
 % The figure is the colored scatter plot for FOSSA (BOX) 
 %figure
-Plotting_confidence_box(system_info,sample_size_vec,0.05,[140 140 140]/256);
+Plotting_confidence_box_updated(system_info,sample_size_vec,0.05,[140 140 140]/256);
 hold on
 scatter(true_mean(:,1),true_mean(:,2),[],frquency_ellipse,'filled')
 
