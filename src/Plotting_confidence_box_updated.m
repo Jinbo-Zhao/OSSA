@@ -86,7 +86,7 @@ max_loc=max(worst_corner_storage);
 for rep =1:num_systems
 
     temp1=worst_corner_storage(rep,:);
-    position=[temp2, max_loc-temp1];
+    position=[temp1, max_loc-temp1];
     hold on
     rectangle('Position',position,'FaceColor','w','EdgeColor','w') 
 
